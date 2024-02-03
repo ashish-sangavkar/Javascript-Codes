@@ -25,3 +25,28 @@ console.log(ad);
     // undefined = NaN
     // null = 0
 
+//*************************************************operations*************************************************** */
+
+let value = 3;
+
+let negValue = -value;
+
+console.log(negValue);
+
+    
+console.log(1 + 2);
+console.log("1" + 2);
+console.log(1 + "2");
+console.log("1" + 2 + 2);
+console.log(1 + "2" + 2);
+console.log(1 + 2 + "2");
+
+
+console.log("****************************************************");
+
+let num = 5
+
+let num1 = ++num;  // first increment value of num and then assign same type of operation with post increment and pre and post decrement 
+
+console.log(num);
+console.log(num1);
