@@ -47,3 +47,10 @@ console.log(myArr); // Array after slice [1, 2, ,3 ,4, 5]
 console.log(myArr.splice(1, 3));  // returns index 1 to 2 values [2, 3]
 
 console.log(myArr); // array after splice [1, 5]
+
+
+const myStr = "Ashish Sangavkar";
+
+const newStr = myStr.replace(/a/g, '');
+
+console.log(newStr); //Ashish Sngvkr
