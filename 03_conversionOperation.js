@@ -1,6 +1,6 @@
 let score  = null;
 
-console.log(typeof score); // string
+console.log(typeof score); // object
 
 let scoreInNum = Number(score);
 
