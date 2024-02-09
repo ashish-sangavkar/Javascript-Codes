@@ -45,4 +45,9 @@ console.log(gmail.search("r")); //  16
 
 
 
+const myStr = "Ashish Sangavkar";
+
+const newStr = myStr.replace(/a/g, '');
+
+console.log(newStr); //Ashish Sngvkr
 
