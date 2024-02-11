@@ -22,7 +22,7 @@ console.log(newName.toUpperCase()); //ASHISH SANGAVKAR
 
 console.log(newName.substring(1,6)); //shish
 
-console.log(newName.replace("sh", "oo")); //Aooish Sangavkar
+console.log(newName.replace(/sh/g, "oo")); //Aooish Sangavkar
 
 console.log(newName.concat(" wk batsman")); // Ashish Sangavkar wk batsman
 
@@ -51,3 +51,22 @@ const newStr = myStr.replace(/a/g, '');
 
 console.log(newStr); //Ashish Sngvkr
 
+
+console.log(myStr.startsWith('A'));
+
+console.log(myStr.lastIndexOf('a'));
+
+let myName = "Ashish Sangavkar";
+
+console.log(myName.search('s'));
+
+myName = "    ashish sangavkar";
+
+console.log(myName);
+console.log(myName.trim());
+
+console.log(myName.includes('si'));
+
+myName = "My Name Is Ashish Sangavkar";
+
+console.log(myName.split(" "));
