@@ -29,7 +29,7 @@ s1 = s.split(' ');
 s2 = "";
 s3 = "";
 for(let i = 0; i<s1.length; i++){
-    s2 += (s1[i].charAt(0).toUpperCase()+s1[i].slice(1)+ " ")+ '';
+    s2 += (s1[i].charAt(0).toUpperCase()+s1[i].slice(1)+ " ");
 }
 console.log(s2);
 
@@ -45,4 +45,9 @@ s = "ashish sangavkar";
 s = s.replace(s.charAt(0),"");
 console.log(s);
 
-//********************delete first char from a string********************* */
+
+
+let ab = "ash345ih47";
+let cd = ab.replace(/[^0-9]/g, "");
+
+console.log(cd);

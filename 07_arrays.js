@@ -10,6 +10,8 @@ console.log(newArr); // [ 'Ashsih', 1, 3, 5, 'Ashish', true, false ]
 
 const oneArr = new Array(1, 2, 3, 4, 5);
 
+console.log(oneArr.reverse());
+
 console.log(oneArr[4]); //5 
 
 
@@ -35,10 +37,11 @@ myArr.unshift(1);
 
 console.log(myArr);
 
-const newArr1  = myArr.join();
+const newArr1  = myArr.join('');
 
 console.log(typeof newArr1);
 
+console.log(newArr1);
 
 console.log(myArr.slice(1, 3));  // returns index 1 to 2 values [2, 3]
 
