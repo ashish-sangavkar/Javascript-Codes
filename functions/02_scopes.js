@@ -26,3 +26,19 @@ if(true){
 console.log(`d = ${d} and  c = ${c}`); // d = 100 and c = 500
 
 // thats why var is not used in js
+
+
+// ***********************************nested scopes****************************************//
+
+function one(){
+    const username = "ashish";
+
+    function two(){
+        const website = "google.com"
+        console.log(username);
+    }
+    ///console.log(website);
+
+    two()
+}
+one()
