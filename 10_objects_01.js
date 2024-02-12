@@ -1,4 +1,6 @@
 
+// objects literal
+
 let mySym = Symbol('sym');
 
 let me = {
