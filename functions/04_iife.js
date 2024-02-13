@@ -5,13 +5,13 @@
 
 
 (function code(){
-    console.log("Ashish Sangavkar");
+    console.log("Ashish Sangavkar"); // Ashish Sangavkar
 })();
 
 (arr = () => {
-    console.log("Hello");
+    console.log("Hello"); // Hello
 })();
 
 ( arr1 = (nm) => {
-    console.log(`name is ${nm}`);
+    console.log(`name is ${nm}`); // name is sumit
 })('sumit')
