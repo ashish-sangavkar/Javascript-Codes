@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Elements using Function</title>
+    <style>
+        .body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body class="body"> 
+
+    <ul class="parent">
+        <li>Java</li>
+    </ul>
+    
+</body>
+<script>
+
+    // first way to add elements
+    function addEle(element){
+        const parent = document.querySelector('.parent');
+        const list_item = document.createElement('li');
+        list_item.innerHTML = `${element}`;
+        parent.appendChild(list_item);
+        //document.querySelector('.parent').appendChild(list_item);
+    }
+
+    addEle("1")
+    addEle("2")
+    addEle("3")
+    addEle("4")
+    addEle("5")
+
+
+    //Optimised way to add elements
+    function addEleOptimised(element){
+        const list_item = document.querySelector('li');
+        list_item.appendChild(document.createTextNode(element));
+        document.querySelector('.parent').appendChild(list_item);
+    }
+
+    addEleOptimised("6")
+    addEleOptimised("7")
+
+
+    //Edit 
+
+    const oldC = document.querySelector("li:nth-child(2)");
+    console.log(oldC.innerHTML);
+    const newC = document.createElement('li');
+    newC.textContent ="8";
+    oldC.replaceWith(newC)
+
+    // Delete 
+
+    const oldC1 = document.querySelector("li:nth-child(3)");
+    oldC1.remove()
+</script>
+
+</html>
