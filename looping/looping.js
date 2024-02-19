@@ -59,3 +59,10 @@ do{
     console.log(names[index]);
     index++;
 }while(index>names.length);
+
+
+const myArr = [1, 2, 3, 4, 5];
+
+myArr.forEach(element => {
+    console.log(element);
+});
