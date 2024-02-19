@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        .body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body class="body">
+    <h1>sss</h1>
+</body>
+
+    <script>
+        const parent = document.querySelector('.body')
+        console.log(parent);
+        const div = document.createElement('div');
+        console.log(div);
+        div.id = "home";
+        div.className = "home";
+        div.setAttribute("title", "Ashish Sangavkar")
+        div.innerHTML = "Computer Science and Egineering"
+        div.style.color = "green"
+        document.body.append(div); // to add element to child
+
+    </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM LEarning</title>
+</head>
+<body style="background-color: #212121; color: white;">
+
+    <div class="parent">
+        <div class="day">CSK</div>
+        <div class="day">RCB</div>
+        <div class="day">MI</div>
+        <div class="day">KKR</div>
+    </div>
+
+</body>
+
+<script>
+
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML); //RCB
+
+    for(let i = 0; i <parent.children.length; i++){
+        console.log(parent.children[i].innerHTML);  // CSk RCB MI KKR
+    }
+    parent.children[1].style.color = "red"
+
+    // to get child element of parent
+    console.log(parent.firstElementChild.innerHTML); //CSK
+    console.log(parent.lastElementChild.innerHTML); //KKR
+
+    const child  = document.querySelector('.day')
+    console.log(child);
+
+    //to get parent element of child
+    console.log(child.parentElement); // <div class="day">CSK</div>
+    console.log(child.parentElement.nextElementSibling);
+
+    console.log(parent.childNodes);
+</script>
+</html>
