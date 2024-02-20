@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project2.css">
+    
+</head>
+<body class="body">
+    
+    <div class="buttons">
+        <Button class="btn" id="red" style="background-color: red;"></Button>
+        <Button class="btn" id="green" style="background-color: green;"></Button>
+        <Button class="btn" id="cyan" style="background-color: cyan;"></Button>
+        <Button class="btn" id="yellow" style="background-color: yellow;"></Button>
+    </div>
+    <ul class="lists">
+        <li>white</li>
+    </ul>
+</body>
+<script>
+    
+const buttons = document.querySelectorAll('.buttons');
+const body = document.querySelector('.body');
+const lists = document.querySelector('.lists')
+
+console.log(buttons);
+
+buttons.forEach(element => {
+    element.addEventListener('click', e =>{
+        console.log(e);
+        console.log(e.target);
+
+        const newListItem = document.createElement('li');
+        if(e.target.id ==="red"){
+            body.style.backgroundColor = e.target.id;
+            newListItem.innerHTML = e.target.id
+            lists.appendChild(newListItem);
+        }
+        if(e.target.id === "green"){
+            body.style.backgroundColor = e.target.id;
+            newListItem.innerHTML = e.target.id;
+            lists.appendChild(newListItem);
+        }
+        if(e.target.id ==="cyan"){
+            body.style.backgroundColor = e.target.id;
+            newListItem.innerHTML = e.target.id;
+            lists.appendChild(newListItem);
+        }
+        if(e.target.id ==="yellow"){
+            body.style.backgroundColor = e.target.id;
+            newListItem.innerHTML = e.target.id;
+            lists.appendChild(newListItem);
+        }
+    })
+});
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.list{
+    margin-left: 50px;
+}
+.btn{
+    height: 80px;
+    width: 80px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.cyan{
+    background-color: cyan;
+}
+.yellow{
+    background-color: yellow;
+}
