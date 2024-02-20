@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        .home{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20%;
+            margin-bottom: 20%;
+            
+        }
+
+        .title{
+            color: green;
+            font-size: larger;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .clock{
+            margin-top: 10px;
+            background-color: orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 60px;
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="home">
+        <div class="title" id="title">The Digital Clock</div>
+        <div class="clock" id="clock"></div>
+    </div>
+</body>
+
+<script>
+
+    const clock = document.getElementById('clock');
+
+    setInterval(function(){
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString()
+    }, 1000);
+    
+
+</script>
+
+</html>
