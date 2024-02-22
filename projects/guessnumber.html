@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <style>
+
+        .body{
+            background-color: #212121;
+            color: white;
+        }
+
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+        }
+        .main{
+            height: 28rem;
+            width: 22rem;
+            background-color: rgb(45, 51, 51);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            flex-direction: column;
+        }
+        .title{
+            font-size: 35px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .instruction{
+            padding: 0;
+            margin: 0;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .input{
+            height: 25px;
+            width: 150px;
+            border: 3px solid #212121;
+        }
+        .submit{
+            margin-top: 20px;
+            height: 30px;
+            width: 100px;
+            border-radius: 7px;
+            background-color: black;
+            color:white;
+            font-weight: bold;
+        }
+        .remainingchances{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+        }
+        .guessarray{
+            margin-top: 10px;
+        }
+        .remainingchances{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="body">
+
+
+    <div class="center">
+
+
+        <div class="main">
+        
+            <p class="instruction">Try and guess a number between 1 and 100.</p>
+            <p class="instruction">You have 10 attempts to guess the right number.</p>
+            <p class="title">Guess a Number</p>
+    
+            <form action="" class="form">
+                <div class="input-div">
+                    <input type="number" class="input" id="input">
+                </div>
+                <div class="button-div">
+                    <Button type="submit" class="submit">Submit</Button>
+                </div>
+            </form>
+            <div class="guessarray">
+                <label for="" class="previous-array-title">Previous Numbers:</label>
+                <label for="" class="previous-array"></label>
+            </div>
+            <div class="remainingchances">
+                <label for="" class="remain-title">Remaining Chances: </label>
+                <label for="" class="remain-chances"></label>
+            </div>
+    
+            <div class="result1">
+                <h3 class="result"></h3>
+            </div>
+            <div class="newgame-div">
+                
+            </div>
+        </div>
+
+
+    </div>
+    
+</body>
+
+<script>
+
+        const form = document.querySelector('.frm');
+        const input = document.querySelector('.input');
+        const submit = document.querySelector('.submit');
+        const previous = document.querySelector('.previous-array');
+        const remain = document.querySelector('.remain-chances');
+        const result = document.querySelector('.result');
+        const newGame = document.querySelector('.newGame');
+        const newGameDiv = document.querySelector('.newgame-div');
+        const newGameBtn = document.createElement("h3");
+        const random = parseInt(Math.random()*100 + 1);
+        console.log(random);
+
+        let playGame = true;
+        let gausses=[];
+        let count = 1;
+        remain.innerHTML = 10;
+        
+        
+        if(playGame){
+            submit.addEventListener("click", function(frm){
+                frm.preventDefault();
+                
+                let inputValue = parseInt(input.value);
+
+                validateNumber(inputValue);
+            });
+        }
+
+        function validateNumber(inputValue){
+
+            if(inputValue < 0){
+                alert("please enter valid number");
+            }
+            else if(inputValue === NaN){
+                alert("please enter valid number");
+            }
+            else if(inputValue >100){
+                alert("please enter valid number");
+            }
+            else{
+                check(inputValue);
+            }
+        }
+        check = (inputValue) =>{
+            if(count === 10){
+
+                gausses.push(inputValue);
+                previous.innerHTML = gausses
+                count++;
+                remain.innerHTML = 11-count;
+                showResult(`You Loose the game... the number was ${random}`);
+                submit.disabled = true;
+                endGame();
+                
+            }
+            else{
+                
+                if(inputValue === random){
+                    showResult(`congratulations you won the game`);
+                    submit.disabled = true;
+                    remain.innerHTML = "";
+                    endGame();
+                }
+                else{
+                    count++;
+                    remain.innerHTML = 11-count;
+                    gausses.push(inputValue);
+                    previous.innerHTML = gausses
+                }
+            }
+        }
+
+    showResult = (message)=> {
+        result.innerHTML = message;
+    }
+
+    function endGame(){
+        
+        newGameBtn.innerHTML = "start new game";
+        newGameBtn.id = "newOne";
+        newGameBtn.style.backgroundColor = "orange";
+        newGameBtn.style.padding = "4px";
+        newGameBtn.className = "newOne";
+        newGameDiv.appendChild(newGameBtn);
+        playGame = false;
+        startGame(newGameBtn);
+
+        console.log();
+    }
+    startGame = (newGameBtn) =>{
+        
+        newGameBtn.addEventListener("click", (e) =>{
+            playGame = true;
+            newGameBtn.remove();
+            gausses = [];
+            previous.innerHTML = gausses
+            count = 1;
+            remain.innerHTML = 11-count;
+            submit.disabled = false;
+            showResult('');
+        })
+
+    }
+
+
+</script>
+</html>
