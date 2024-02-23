@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        .body{
+            background-color: #212121;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .outer{
+            height: 100vh;
+            width: 60vh;
+            
+        }
+        .main{
+            
+            background-color: #4e4b4b;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .label1{
+            margin-right: 40px;
+        }
+        .label2{
+            margin-right: 61px;
+        }
+        .secondSection{
+            margin-top: 10px;
+        }
+        .thirdSection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .input{
+            height: 30px;
+        }
+        .btn{
+            height: 30px;
+            background-color: orange;
+        }
+        .fourthSection{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body class="body">
+        
+    <div class="outer">
+
+        <div class="main">
+            <h2 class="title">Age Calculator</h2>
+    
+            <form action="" class="form">
+    
+                <div class="firstSection">
+                    <label for="" class="label1">Enter your Birth Date</label>
+                    <input type="date" class="input" id="input1">
+                </div>
+                <div class="secondSection">
+                    <label for="" class="label2">Enter Todays Date</label>
+                    <input type="date" class="input" id="input2">
+                </div>
+                <div class="thirdSection">
+                    <Button class="btn">Calculate</Button>
+                </div>
+                <div class="fourthSection">
+                    <h3 class="yearsTitle"></h3>
+                    <h3 class="monthsTitle"></h3>
+                    <h3 class="daysTitle"></h3>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+
+    const form = document.querySelector('.form');
+    const yearsTitle = document.querySelector('.yearsTitle');
+    const monthsTitle = document.querySelector('.monthsTitle');
+    const daysTitle = document.querySelector('.daysTitle');
+
+    form.addEventListener("submit", (e) =>{
+        e.preventDefault();
+
+    const dob = document.querySelector("#input1").value;
+    const dot = document.querySelector("#input2").value;
+
+    if(dob === ""){
+        alert("enter valid date");
+
+    }else{
+
+        const dobarr = dob.split('-');
+    const dotarr = dot.split('-');
+
+    const dobDate = new Date(dobarr[0], dobarr[1] - 1, dobarr[2]); // Subtract 1 from the month since months are zero-indexed in JavaScript
+    const dotDate = new Date(dotarr[0], dotarr[1] - 1, dotarr[2]);
+
+    let years = dotDate.getFullYear() - dobDate.getFullYear();
+    let months = dotDate.getMonth() - dobDate.getMonth();
+    let days = dotDate.getDate() - dobDate.getDate();
+
+    // If the birth date hasn't occurred yet this year, subtract one year
+    if (months < 0 || (months === 0 && days < 0)) {
+        years--;
+        months +=12;
+    }
+
+    console.log(`${years} years ${months} months ${days} days`);
+
+    yearsTitle.innerHTML = `${years} year`;
+    monthsTitle.innerHTML = `${months} months`;
+    daysTitle.innerHTML = `${days} days`;
+        
+    }
+
+    
+    });
+
+</script>
+
+</html>
