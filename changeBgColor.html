@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+</head>
+<body  id="body">
+    <h2>background-color will continuesly change after clicking on <i>start</i> button and will stop changing background-color after <i>stop</i> button </h2>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+</body>
+<script>
+    const start = document.querySelector(".start");
+    const stop = document.querySelector(".stop");
+    const body = document.querySelector("body");
+
+    function changeBgColor(col){
+        body.style.backgroundColor = col;
+    }
+
+    start.addEventListener("click", (e)=>{
+
+        console.log("clicked");
+    //     const arrColor = ["red", "green", "blue", "orange", "cyan", "pink", "voilet", "black", "white"];
+
+    //     for(let i=0; i<arrColor.length; i++){
+
+    //         changeBgColor(arrColor);
+    //         // setInterval(changeBgColor, 1000, arrColor[i]);
+    //         if(i === 8){
+    //             i=0;
+    //         }
+    //     }
+    });
+        
+
+
+
+
+</script>
+</html>

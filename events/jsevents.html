@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .home{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            justify-items:center;
+        }
+        .btn{
+            height: 30px;
+            width: 50px;;
+        }
+    </style>
+</head>
+<body>
+    <div class="home">
+
+        <button class="btn" id="red">red</button>
+        <button class="btn" id="green">green</button>
+        <button class="btn" id="blue">blue</button>
+        <button class="btn" id="orange">orange</button>
+        <button class="btn" id="yellow" onclick="alert('yellow')">yellow</button>
+        
+    </div>
+</body>
+<script>
+
+    // document.getElementById('red').onclick   = function(){
+    //     alert("red")
+    // };
+
+    document.getElementById('green').addEventListener("click", function(e){
+        console.log(e);
+    }, false)
+
+    document.getElementById('green').addEventListener("click", function(e){
+        console.log(e.target);
+    }, false)
+</script>
+</html>

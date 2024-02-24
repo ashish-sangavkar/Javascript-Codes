@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time Out</title>
+</head>
+<body>
+    <h1 id="heading">React js</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    setTimeout(()=>{ // settimeout is used to print op after specifuc given time
+        console.log("Ashish sangavkar");
+    }, 5000);
+
+    const heading = document.querySelector('#heading');
+    const change = document.querySelector('#stop');
+
+    function hello(){
+        heading.innerHTML = "Java Spring Boot";
+    }
+
+    const changeMe  = setTimeout(hello, 5000); // for performing any action after a time period
+
+    change.addEventListener("click", (e)=>{
+        clearTimeout(changeMe);  // wants to stop that action befor time period
+    })  
+</script>
+</html>

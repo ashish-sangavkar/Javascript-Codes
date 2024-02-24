@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    
+    <div class="divTime">
+        <h1 class="time"></h1>
+        <button class="start">start</button>
+        <button class="stop">stop</button>
+        
+    </div>
+</body>
+<script>
+
+const div = document.querySelector(".divTime");
+const time = document.querySelector(".time");
+const start = document.querySelector(".start");
+const stop = document.querySelector(".stop");
+let ref;
+
+const setTime = function(){
+    let date = new Date();
+    time.innerHTML = date.toLocaleTimeString();
+}
+
+
+start.addEventListener("click", ()=>{
+    ref = setInterval(setTime, 1000);   //
+});
+
+stop.addEventListener("click", ()=>{
+    clearInterval(ref);
+});
+
+
+</script>
+</html>
